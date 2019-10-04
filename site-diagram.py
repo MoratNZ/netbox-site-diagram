@@ -12,7 +12,7 @@ class SiteDiagram(Script):
 
         siteName = ObjectVar(
             description="Site to map",
-            querySet=Site.objects.filter()
+            queryset=Site.objects.filter()
         )
 
     def run(self, data):
