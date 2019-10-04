@@ -1,0 +1,1 @@
+cp site-diagram.py /usr/local/netbox/netbox/site-diagram.py
