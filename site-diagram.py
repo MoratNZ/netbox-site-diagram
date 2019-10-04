@@ -1,6 +1,6 @@
-from extras.scripts import scripts
 from dcim.constants import *
-from dcim.models import Site
+from dcim.models import Device, DeviceRole, DeviceType, Site
+from extras.scripts import *
 
 
 class SiteDiagram(Script):
@@ -11,7 +11,7 @@ class SiteDiagram(Script):
         fields = ["siteName"]
 
         siteName = ObjectVar(
-            description="Site",
+            description="Site to map",
             querySet=Site.objects.filter()
         )
 
