@@ -7,14 +7,16 @@ class SiteDiagram(Script):
     class Meta:
         name = "Site diagram"
         description = "Draw a logical diagram of a site"
-        fields = ['site_code']
+        fields = ['site_name']
 
-    site_code = ObjectVar(
+    site_name = ObjectVar(
         description="Site to draw",
-        queryset=DeviceType.objects.filter(
-            manufacturer__name='Cisco',
-        )
+        queryset=Site.objects.filter()
     )
 
     def run(self, data):
-        pass
+        devices = Device.objects.filter(
+            site=data['site_name']
+        )
+
+        return data['site_name']
